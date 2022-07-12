@@ -32,7 +32,11 @@ export const ProductCard: React.FC<IProductCardProps> = ({
         {product.colors.length > 0 && <ProductColors colors={product.colors} />}
 
         <div className="products-info__description">
-          <div className="products-info__main products-info__main_sold">
+          <div
+            className={`products-info__main ${
+              product.sizes.length === 0 && "products-info__main_no-size"
+            } ${product.sold && "products-info__main_sold"}`}
+          >
             <h3 className="products-info__header">{product.name}</h3>
             <span className="products-info__price">{product.price}</span>
           </div>
