@@ -2,6 +2,8 @@
 
 Перенос верстки на React
 
+Демо: https://danlavro.github.io/shop-cards/ 
+
 Как запустить:
 
 ```
