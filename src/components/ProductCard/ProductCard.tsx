@@ -3,6 +3,8 @@ import React from "react";
 import "./ProductCard.scss";
 
 import { IProduct } from "../../types/types";
+import { ProductSizes } from "./components/ProductSizes";
+import { ProductColors } from "./components/ProductColors";
 
 interface IProductCardProps {
   product: IProduct;
@@ -27,17 +29,7 @@ export const ProductCard: React.FC<IProductCardProps> = ({
           product.colors.length === 0 && "products-info_disabled"
         }`}
       >
-        {product.colors.length > 0 && (
-          <ul className="products-info__colors colors">
-            {product.colors.map((color) => (
-              <li
-                className="colors__item"
-                style={{ background: color }}
-                key={color}
-              ></li>
-            ))}
-          </ul>
-        )}
+        {product.colors.length > 0 && <ProductColors colors={product.colors} />}
 
         <div className="products-info__description">
           <div className="products-info__main products-info__main_sold">
@@ -48,13 +40,7 @@ export const ProductCard: React.FC<IProductCardProps> = ({
           {product.sold ? (
             <span className="products-info__sold">sold out</span>
           ) : (
-            <ul className="products-info__sizes">
-              {product.sizes.map((size) => (
-                <li className="products-info__size" key={size}>
-                  {size}
-                </li>
-              ))}
-            </ul>
+            <ProductSizes sizes={product.sizes} />
           )}
         </div>
       </div>
