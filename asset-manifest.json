@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/shop-cards/static/css/main.db532f1c.css",
+    "main.js": "/shop-cards/static/js/main.c5ebdafc.js",
+    "index.html": "/shop-cards/index.html",
+    "main.db532f1c.css.map": "/shop-cards/static/css/main.db532f1c.css.map",
+    "main.c5ebdafc.js.map": "/shop-cards/static/js/main.c5ebdafc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.db532f1c.css",
+    "static/js/main.c5ebdafc.js"
+  ]
+}
