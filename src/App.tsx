@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
-import { CardList } from "./components/CardList/CardList";
+
+import "./scss/style.scss";
+import { ProductCardsList } from "./components/ProductCardsList/ProductCardsList";
 
 import { IProduct } from "./types/types";
 
 function App() {
-  const [data, setData] = useState<IProduct[]>([]);
-
+  const [products, setProducts] = useState<IProduct[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   async function fetchData() {
@@ -15,7 +15,7 @@ function App() {
 
       fetch("jacquemus-test-data.json")
         .then((res) => res.json())
-        .then((res) => setData(res));
+        .then((res) => setProducts(res));
     } catch (err) {
       console.log(err);
     }
@@ -29,7 +29,11 @@ function App() {
   return (
     <div className="App">
       <main className="main">
-        {isLoading ? <h2>Loading...</h2> : <CardList products={data} />}
+        {isLoading ? (
+          <h2>Loading...</h2>
+        ) : (
+          <ProductCardsList products={products} />
+        )}
       </main>
     </div>
   );

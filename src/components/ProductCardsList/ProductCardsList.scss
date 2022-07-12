@@ -1,0 +1,12 @@
+.products__list {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% + 1px);
+  border-top: 1px solid $colorDark;
+  margin-right: -1px;
+}
+
+.products__list {
+  width: calc(100%);
+  margin-right: 0;
+}
