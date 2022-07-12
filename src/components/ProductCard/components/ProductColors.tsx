@@ -5,8 +5,6 @@ interface IProductColorsProps {
 }
 
 export const ProductColors: React.FC<IProductColorsProps> = ({ colors }) => {
-  console.log(colors);
-
   return (
     <ul className="products-info__colors colors">
       {colors.map((color, i) => (
